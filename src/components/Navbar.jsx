@@ -1,4 +1,6 @@
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
+import Icon from "./Icon";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,76 +9,67 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
+  const navLinks = [
+    { label: "About", href: "#about" },
+    { label: "Experience", href: "#experience" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Education", href: "#education" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-slate-950/80 backdrop-blur-md">
+    <nav className="fixed left-0 top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md transition-colors duration-300 dark:border-white/10 dark:bg-slate-950/80">
+
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
 
         {/* Logo */}
         <a
           href="#home"
           onClick={closeMenu}
-          className="text-xl font-bold tracking-tight text-white"
+          className="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
         >
-          Aman<span className="text-cyan-400">.</span>
+          Aman<span className="text-cyan-500 dark:text-cyan-400">.</span>
         </a>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-7 md:flex">
-          <a
-            href="#about"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
-          >
-            About
-          </a>
+        <div className="hidden items-center gap-6 md:flex">
 
-          <a
-            href="#experience"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
-          >
-            Experience
-          </a>
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-slate-600 transition duration-200 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400"
+            >
+              {link.label}
+            </a>
+          ))}
 
-          <a
-            href="#skills"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
-          >
-            Skills
-          </a>
+          {/* Theme Toggle */}
+          <ThemeToggle />
 
+          {/* Resume */}
           <a
-            href="#projects"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded-lg border border-cyan-500 px-4 py-2 text-sm font-medium text-cyan-600 transition duration-300 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-400 dark:hover:text-slate-950"
           >
-            Projects
-          </a>
+            <Icon
+              name="download.svg"
+              className="h-4 w-4"
+            />
 
-          <a
-            href="#education"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
-          >
-            Education
-          </a>
-
-          <a
-            href="#contact"
-            className="text-sm text-slate-300 transition hover:text-cyan-400"
-          >
-            Contact
-          </a>
-
-          <a
-            href="#"
-            className="rounded-lg border border-cyan-400 px-4 py-2 text-sm font-medium text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950"
-          >
             Resume
           </a>
+
         </div>
 
         {/* Mobile Menu Button */}
         <button
           type="button"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-slate-300 transition hover:border-cyan-400 hover:text-cyan-400 md:hidden"
+          onClick={() => setIsMenuOpen((previous) => !previous)}
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition duration-300 hover:border-cyan-400 hover:text-cyan-500 dark:border-white/10 dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-400 md:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
         >
@@ -112,66 +105,50 @@ function Navbar() {
             </svg>
           )}
         </button>
+
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="border-t border-white/10 bg-slate-950 px-6 py-5 md:hidden">
+        <div className="border-t border-slate-200 bg-white px-6 py-5 dark:border-white/10 dark:bg-slate-950 md:hidden">
+
           <div className="flex flex-col gap-1">
 
-            <a
-              href="#about"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
-            >
-              About
-            </a>
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className="rounded-lg px-4 py-3 text-sm font-medium text-slate-600 transition duration-200 hover:bg-slate-50 hover:text-cyan-600 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-cyan-400"
+              >
+                {link.label}
+              </a>
+            ))}
 
-            <a
-              href="#experience"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
-            >
-              Experience
-            </a>
+            {/* Theme */}
+            <div className="mt-3 flex items-center justify-between border-t border-slate-200 pt-4 dark:border-white/10">
 
-            <a
-              href="#skills"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
-            >
-              Skills
-            </a>
+              <span className="text-sm text-slate-500 dark:text-slate-400">
+                Theme
+              </span>
 
-            <a
-              href="#projects"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
-            >
-              Projects
-            </a>
+              <ThemeToggle />
 
-            <a
-              href="#education"
-              onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
-            >
-              Education
-            </a>
+            </div>
 
+            {/* Resume */}
             <a
-              href="#contact"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={closeMenu}
-              className="rounded-lg px-4 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-cyan-400"
+              className="mt-3 flex items-center justify-center gap-2 rounded-lg border border-cyan-500 px-4 py-3 text-sm font-medium text-cyan-600 transition duration-300 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-400 dark:hover:text-slate-950"
             >
-              Contact
-            </a>
+              <Icon
+                name="download.svg"
+                className="h-4 w-4"
+              />
 
-            <a
-              href="#"
-              onClick={closeMenu}
-              className="mt-2 rounded-lg border border-cyan-400 px-4 py-3 text-center text-sm font-medium text-cyan-400 transition hover:bg-cyan-400 hover:text-slate-950"
-            >
               Resume
             </a>
 

@@ -1,118 +1,259 @@
 import { motion } from "motion/react";
 
+const technologies = [
+  {
+    name: "Java",
+    icon: "/icons/java.svg",
+    position: "left-1/2 top-[-10px] -translate-x-1/2",
+  },
+  {
+    name: "React",
+    icon: "/icons/react.svg",
+    position: "left-[12%] top-[18%]",
+  },
+  {
+    name: "Spring Boot",
+    icon: "/icons/springboot.svg",
+    position: "right-[12%] top-[18%]",
+  },
+  {
+    name: "Python",
+    icon: "/icons/python.svg",
+    position: "left-[5%] bottom-[20%]",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "/icons/postgresql.svg",
+    position: "right-[5%] bottom-[20%]",
+  },
+  {
+    name: "Git",
+    icon: "/icons/git.svg",
+    position: "left-1/2 bottom-[-10px] -translate-x-1/2",
+  },
+];
+
+function SocialIcon({ href, icon, label }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      className="flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-cyan-400"
+    >
+      <span
+        aria-hidden="true"
+        className="h-5 w-5 bg-current"
+        style={{
+          maskImage: `url(${icon})`,
+          WebkitMaskImage: `url(${icon})`,
+          maskRepeat: "no-repeat",
+          WebkitMaskRepeat: "no-repeat",
+          maskPosition: "center",
+          WebkitMaskPosition: "center",
+          maskSize: "contain",
+          WebkitMaskSize: "contain",
+        }}
+      />
+    </a>
+  );
+}
+
 function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden px-6 pt-20"
+      className="relative min-h-screen overflow-hidden bg-white px-6 pt-24 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-1/3 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+      {/* Background glow */}
+      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/4 top-1/4 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl dark:bg-cyan-500/10" />
 
-        <div className="absolute right-0 top-1/4 h-64 w-64 rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-72 w-72 rounded-full bg-blue-400/10 blur-3xl dark:bg-blue-500/10" />
       </div>
 
-      <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
-
-        {/* Left content */}
+      <div className="mx-auto grid min-h-[calc(100vh-6rem)] w-full max-w-6xl items-center gap-12 md:grid-cols-2">
+        {/* =====================================================
+            LEFT SIDE
+        ===================================================== */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
+          className="max-w-2xl"
         >
-          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-400">
-            Hello, I'm
+          <p className="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-600 dark:text-cyan-400">
+            Cloud Support Engineer · Full-Stack Developer
           </p>
 
-          <h1 className="text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Aman Gour
+          <h1 className="text-5xl font-bold leading-tight tracking-tight text-slate-900 sm:text-6xl dark:text-white">
+            Hi, I'm{" "}
+            <span className="text-cyan-600 dark:text-cyan-400">Aman Gour</span>.
           </h1>
 
-          <h2 className="mt-4 text-2xl font-semibold text-slate-300 sm:text-3xl">
-            Java & Full-Stack Developer
+          <h2 className="mt-5 text-2xl font-semibold text-slate-700 sm:text-3xl dark:text-slate-300">
+            I build reliable software and practical solutions.
           </h2>
 
-          <p className="mt-6 max-w-xl text-base leading-7 text-slate-400 sm:text-lg">
-            I build scalable backend systems and modern web applications
-            using Java, Spring Boot, React, and modern development
-            technologies.
+          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+            I'm a Computer Science Engineering graduate working at TCS as a
+            Cloud Support Engineer, with a strong interest in backend and
+            full-stack development. I enjoy turning ideas into practical
+            applications and understanding how software works beyond just
+            writing code.
           </p>
 
           {/* Buttons */}
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="rounded-lg bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+              className="rounded-lg bg-cyan-500 px-6 py-3 font-semibold text-slate-950 transition duration-300 hover:-translate-y-1 hover:bg-cyan-400"
             >
-              View My Work
+              View Projects
             </a>
 
             <a
               href="#contact"
-              className="rounded-lg border border-slate-700 px-6 py-3 font-semibold text-slate-200 transition hover:border-cyan-400 hover:text-cyan-400"
+              className="rounded-lg border border-slate-300 px-6 py-3 font-semibold text-slate-700 transition duration-300 hover:-translate-y-1 hover:border-cyan-400 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-cyan-400"
             >
               Contact Me
             </a>
           </div>
 
-          {/* Social links */}
-          <div className="mt-8 flex gap-5">
+          {/* Social Icons */}
+          <div className="mt-8 flex items-center gap-4">
             <a
-              href="#"
-              className="text-sm text-slate-400 transition hover:text-cyan-400"
+              href="https://github.com/AmanGour03"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
             >
-              GitHub ↗
+              <img src="/icons/github.svg" alt="" className="h-6 w-6" />
             </a>
 
             <a
-              href="#"
-              className="text-sm text-slate-400 transition hover:text-cyan-400"
+              href="YOUR_LINKEDIN_URL"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
             >
-              LinkedIn ↗
+              <img src="/icons/linkedin.svg" alt="" className="h-6 w-6" />
+            </a>
+
+            <a
+              href="mailto:YOUR_EMAIL"
+              aria-label="Email"
+              className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
+            >
+              <img src="/icons/mail.svg" alt="" className="h-6 w-6" />
             </a>
           </div>
         </motion.div>
 
-        {/* Right visual */}
+        {/* RIGHT SIDE — ORBITAL TECHNOLOGY SYSTEM */}
         <motion.div
-          className="hidden justify-center md:flex"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{
+            duration: 0.9,
+            delay: 0.2,
+          }}
+          className="relative mx-auto flex h-[500px] w-full max-w-[500px] items-center justify-center"
         >
-          <div className="relative flex h-80 w-80 items-center justify-center rounded-3xl border border-white/10 bg-white/[0.03] shadow-2xl backdrop-blur-sm">
+          {/* Outer glow */}
+          <div className="absolute h-[390px] w-[390px] rounded-full bg-cyan-400/5 blur-3xl dark:bg-cyan-500/10" />
 
-            {/* Decorative rings */}
-            <div className="absolute h-64 w-64 rounded-full border border-cyan-400/20" />
+          {/* OUTER ORBIT */}
+          <motion.div
+            className="absolute h-[440px] w-[440px] rounded-full border border-cyan-500/10 dark:border-cyan-400/10"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 35,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
 
-            <div className="absolute h-48 w-48 rounded-full border border-cyan-400/20" />
+          {/* MIDDLE ORBIT */}
+          <motion.div
+            className="absolute h-[350px] w-[350px] rounded-full border border-cyan-500/20 dark:border-cyan-400/20"
+            animate={{ rotate: -360 }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
 
-            {/* Initial */}
-            <div className="flex h-28 w-28 items-center justify-center rounded-2xl bg-cyan-400 text-5xl font-bold text-slate-950 shadow-lg shadow-cyan-400/20">
-              AG
-            </div>
+          {/* INNER ORBIT */}
+          <motion.div
+            className="absolute h-[270px] w-[270px] rounded-full border border-cyan-500/30 dark:border-cyan-400/25"
+            animate={{ rotate: 360 }}
+            transition={{
+              duration: 22,
+              repeat: Infinity,
+              ease: "linear",
+            }}
+          />
 
-            {/* Floating labels */}
-            <span className="absolute left-4 top-10 rounded-full border border-white/10 bg-slate-900 px-3 py-1 text-xs text-slate-300">
-              Java
-            </span>
-
-            <span className="absolute bottom-10 right-4 rounded-full border border-white/10 bg-slate-900 px-3 py-1 text-xs text-slate-300">
-              React
-            </span>
-
-            <span className="absolute right-0 top-20 rounded-full border border-white/10 bg-slate-900 px-3 py-1 text-xs text-slate-300">
-              Spring Boot
-            </span>
-
-            <span className="absolute bottom-20 left-0 rounded-full border border-white/10 bg-slate-900 px-3 py-1 text-xs text-slate-300">
-              SQL
-            </span>
-
+          {/* CENTER PHOTO */}
+          <div className="relative z-20 h-64 w-64 overflow-hidden rounded-full border-4 border-cyan-400/40 bg-slate-100 shadow-2xl shadow-cyan-500/10 dark:bg-slate-900">
+            <img
+              src="/images/profile.png"
+              alt="Aman Gour"
+              className="h-full w-full object-cover"
+            />
           </div>
-        </motion.div>
 
+          {/* TECHNOLOGY ICONS */}
+          {technologies.map((technology, index) => (
+            <motion.div
+              key={technology.name}
+              className={`absolute z-30 ${technology.position}`}
+              initial={{
+                opacity: 0,
+                scale: 0.5,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 0.7 + index * 0.1,
+              }}
+            >
+              <motion.div
+                animate={{
+                  y: [0, -7, 0],
+                }}
+                transition={{
+                  duration: 4 + index * 0.3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="group flex h-14 w-14 items-center justify-center rounded-xl border border-slate-200 bg-white/95 shadow-lg backdrop-blur-sm transition duration-300 hover:scale-110 hover:border-cyan-400 dark:border-white/10 dark:bg-slate-900/95"
+                title={technology.name}
+              >
+                <img
+                  src={technology.icon}
+                  alt={technology.name}
+                  className="h-8 w-8 object-contain"
+                />
+              </motion.div>
+            </motion.div>
+          ))}
+
+          {/* Small orbital dots */}
+          <div className="absolute left-[19%] top-[43%] h-1.5 w-1.5 rounded-full bg-cyan-400/60" />
+
+          <div className="absolute right-[19%] top-[57%] h-1.5 w-1.5 rounded-full bg-cyan-400/60" />
+
+          <div className="absolute bottom-[28%] left-[32%] h-1 w-1 rounded-full bg-cyan-400/50" />
+        </motion.div>
       </div>
     </section>
   );
