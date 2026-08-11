@@ -5,23 +5,24 @@ const education = [
     institution: "Oriental Institute of Science and Technology",
     location: "Bhopal, Madhya Pradesh",
   },
+  
 ];
 
 const certifications = [
   {
-    name: "OCI AI Foundations Associate",
-    issuer: "Oracle",
-    year: "2025",
+    name: "GitHub Foundations",
+    issuer: "Microsoft",
+    year: "2026",
+  },
+  {
+    name: "Azure Fundamentals",
+    issuer: "Microsoft",
+    year: "2026",
   },
   {
     name: "Core Java",
     issuer: "Coursera",
-    year: "",
-  },
-  {
-    name: "MERN Stack",
-    issuer: "Certification",
-    year: "",
+    year: "2023",
   },
 ];
 

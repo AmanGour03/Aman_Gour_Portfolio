@@ -17,8 +17,8 @@ const technologies = [
     position: "right-[12%] top-[18%]",
   },
   {
-    name: "Python",
-    icon: "/icons/python.svg",
+    name: "JavaScript",
+    icon: "/icons/javascript.svg",
     position: "left-[5%] bottom-[20%]",
   },
   {
@@ -74,9 +74,7 @@ function Hero() {
       </div>
 
       <div className="mx-auto grid min-h-[calc(100vh-6rem)] w-full max-w-6xl items-center gap-12 md:grid-cols-2">
-        {/* =====================================================
-            LEFT SIDE
-        ===================================================== */}
+        {/* LEFT SIDE */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,7 +123,7 @@ function Hero() {
           <div className="mt-8 flex items-center gap-4">
             <a
               href="https://github.com/AmanGour03"
-              target="_blank"
+              target="https://github.com/AmanGour03"
               rel="noreferrer"
               aria-label="GitHub"
               className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
@@ -134,8 +132,8 @@ function Hero() {
             </a>
 
             <a
-              href="YOUR_LINKEDIN_URL"
-              target="_blank"
+              href="https://www.linkedin.com/in/aman-gour/"
+              target="https://www.linkedin.com/in/aman-gour/"
               rel="noreferrer"
               aria-label="LinkedIn"
               className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
@@ -144,7 +142,7 @@ function Hero() {
             </a>
 
             <a
-              href="mailto:YOUR_EMAIL"
+              href="mailto:compag2022@gmail.com"
               aria-label="Email"
               className="flex h-11 w-11 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
             >

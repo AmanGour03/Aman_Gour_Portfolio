@@ -27,7 +27,7 @@ function Footer() {
   </a>
 
   <a
-    href="YOUR_LINKEDIN_URL"
+    href="https://www.linkedin.com/in/aman-gour/"
     target="_blank"
     rel="noreferrer"
     aria-label="LinkedIn"
@@ -41,7 +41,7 @@ function Footer() {
   </a>
 
   <a
-    href="mailto:YOUR_EMAIL"
+    href="mailto:compag2022@gmail.com"
     aria-label="Email"
     className="opacity-80 transition hover:-translate-y-0.5 hover:opacity-100"
   >

@@ -50,7 +50,7 @@ function Navbar() {
 
           {/* Resume */}
           <a
-            href="/resume.pdf"
+            href="https://flowcv.com/resume/trc4o6bwd6"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-lg border border-cyan-500 px-4 py-2 text-sm font-medium text-cyan-600 transition duration-300 hover:bg-cyan-500 hover:text-white dark:border-cyan-400 dark:text-cyan-400 dark:hover:bg-cyan-400 dark:hover:text-slate-950"
@@ -138,7 +138,7 @@ function Navbar() {
 
             {/* Resume */}
             <a
-              href="/resume.pdf"
+              href="https://flowcv.com/resume/trc4o6bwd6"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}

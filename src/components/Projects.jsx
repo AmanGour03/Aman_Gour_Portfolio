@@ -8,7 +8,7 @@ const projects = [
     description:
       "A personal finance management application designed to help users track expenses, manage income, and understand their financial activity through a simple dashboard.",
     technologies: ["Java", "Spring Boot", "PostgreSQL", "React", "JWT"],
-    github: "#",
+    github: "https://github.com/AmanGour03/PennyWise-Money-Tracker",
     demo: "#",
   },
   {
@@ -17,30 +17,14 @@ const projects = [
     description:
       "An IoT-enabled agricultural monitoring platform that collects real-time soil and water parameters and provides data visualization, alerts, and intelligent recommendations.",
     technologies: ["Arduino", "ESP8266", "Django", "Python", "IoT", "AI"],
-    github: "#",
-    demo: "#",
+    github: "https://github.com/AmanGour03/FarmSync",
   },
   {
-    title: "VoiceGuard AI",
-    category: "AI / Voice Recognition",
-    description:
-      "A speaker-aware voice recognition solution designed to improve command attribution in environments where multiple people may be speaking simultaneously.",
-    technologies: [
-      "Python",
-      "AI",
-      "Speech Recognition",
-      "Speaker Recognition",
-    ],
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "JournalApp",
-    category: "Backend Application",
-    description:
-      "A backend application for managing journal entries with a RESTful architecture, MongoDB persistence, and Spring Boot.",
-    technologies: ["Java", "Spring Boot", "MongoDB", "REST API"],
-    github: "#",
+    title: "TaskMangement-Backend-Application",
+    category: "Java-Backend Application",
+    description: "TaskMangement Backend development with Spring Boot",
+    technologies: ["Java", "Spring Boot", "PostgreSQL", "JWT"],
+    github: "https://github.com/AmanGour03/TaskMangement-Backend-Application",
     demo: "#",
   },
 ];
@@ -52,7 +36,6 @@ function Projects() {
       className="border-t border-slate-200 bg-slate-50 px-6 py-24 text-slate-900 transition-colors duration-300 dark:border-white/5 dark:bg-slate-900 dark:text-white"
     >
       <div className="mx-auto max-w-6xl">
-
         {/* Heading */}
         <motion.div
           className="mb-14"
@@ -70,9 +53,9 @@ function Projects() {
           </h2>
 
           <p className="mt-4 max-w-2xl leading-7 text-slate-600 dark:text-slate-400">
-            A selection of applications and technical projects that
-            demonstrate my experience across backend development,
-            full-stack engineering, IoT, and AI.
+            A selection of applications and technical projects that demonstrate
+            my experience across backend development, full-stack engineering,
+            IoT, and AI.
           </p>
         </motion.div>
 
@@ -90,10 +73,8 @@ function Projects() {
                 delay: index * 0.1,
               }}
             >
-
               {/* Project Visual */}
               <div className="relative flex h-44 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-white/10 dark:bg-slate-900">
-
                 {/* Background decoration */}
                 <div className="absolute h-32 w-32 rounded-full bg-cyan-500/10 blur-3xl transition duration-500 group-hover:bg-cyan-500/20" />
 
@@ -131,7 +112,6 @@ function Projects() {
 
               {/* Links */}
               <div className="mt-7 flex items-center gap-3 border-t border-slate-200 pt-5 dark:border-white/10">
-
                 {/* GitHub */}
                 <a
                   href={project.github}
@@ -141,10 +121,7 @@ function Projects() {
                   title="GitHub Repository"
                   className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-400 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-cyan-400"
                 >
-                  <Icon
-                    name="github.svg"
-                    className="h-5 w-5"
-                  />
+                  <Icon name="github.svg" className="h-5 w-5" />
                 </a>
 
                 {/* Live Demo */}
@@ -156,12 +133,8 @@ function Projects() {
                   title="Live Demo"
                   className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition duration-300 hover:-translate-y-0.5 hover:border-cyan-400 hover:text-cyan-600 dark:border-white/10 dark:text-slate-300 dark:hover:text-cyan-400"
                 >
-                  <Icon
-                    name="external-link.svg"
-                    className="h-5 w-5"
-                  />
+                  <Icon name="external-link.svg" className="h-5 w-5" />
                 </a>
-
               </div>
             </motion.article>
           ))}

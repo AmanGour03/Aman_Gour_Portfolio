@@ -56,7 +56,7 @@ function Contact() {
   </a>
 
   <a
-    href="YOUR_LINKEDIN_URL"
+    href="https://www.linkedin.com/in/aman-gour/"
     target="_blank"
     rel="noreferrer"
     aria-label="LinkedIn"
@@ -70,7 +70,7 @@ function Contact() {
   </a>
 
   <a
-    href="mailto:YOUR_EMAIL"
+    href="mailto:compag2022@gmail.com"
     aria-label="Email"
     className="flex h-12 w-12 items-center justify-center rounded-xl border border-slate-200 bg-white transition duration-200 hover:-translate-y-1 hover:border-cyan-400 hover:shadow-lg dark:border-white/10 dark:bg-slate-900"
   >
